@@ -26,6 +26,7 @@ which is why my .zshrc is rather short.
 * NERD Tree
 * Tag List
 * YouCompleteMe
+* ctrlp.vim
 * delimitMate
 * surround.vim
 * syntastic

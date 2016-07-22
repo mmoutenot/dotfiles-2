@@ -89,12 +89,13 @@ set pastetoggle=<F3>
 """""""""""""""""""""""""""""
 "        Colours and GUI    "
 """""""""""""""""""""""""""""
+colorscheme jellybeans
 if &term=='xterm'   " xterm supports 256 colours but doesn't set this
     set t_Co=256
 endif
 if &t_Co==256
     set background=dark     " Use dark background
-    colorscheme gruvbox  " Use nicer colourscheme
+    colorscheme gruvbox " Use nicer colourscheme
 endif
 if has("gui_running")
     colorscheme gruvbox  " Gui sometimes doesn't set t_Co

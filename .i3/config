@@ -216,17 +216,16 @@ exec setxkbmap -layout 'us,cz(qwerty)' && setxkbmap -option 'grp:shift_caps_togg
 # Applets
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id twmnd # notifications
-exec --no-startup-id dropbox
-exec --no-startup-id megasync
+#exec --no-startup-id dropbox
+#exec --no-startup-id megasync
 exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
-exec --no-startup-id uim-toolbar-gtk3-systray
-
-# Musid daemon
-exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 
 # Compositor
 exec compton -b --config ~/.compton.conf
 
 # Wallpaper
-exec feh --bg-fill /media/data/dokumenty/tapety/steampunk_rain.jpg
+exec feh --bg-tile ~/bg.png
+
+# Multiple monitors
+exec xrandr --output DVI-I-1 --right-of VGA-1

@@ -70,6 +70,9 @@ bindsym $mod+a focus parent
 # focus a child container
 bindsym $mod+z focus child
 
+workspace 1 output VGA-1
+workspace 2 output HDMI-1
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -215,11 +218,12 @@ exec setxkbmap -layout 'us,cz(qwerty)' && setxkbmap -option 'grp:shift_caps_togg
 
 # Applets
 exec --no-startup-id nm-applet # network manager
-exec --no-startup-id twmnd # notifications
+#exec --no-startup-id twmnd # notifications
 #exec --no-startup-id dropbox
-#exec --no-startup-id megasync
+exec --no-startup-id megasync
 exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
+exec --no-startup-id slack
 
 # Compositor
 exec compton -b --config ~/.compton.conf
@@ -228,4 +232,6 @@ exec compton -b --config ~/.compton.conf
 exec feh --bg-tile ~/bg.png
 
 # Multiple monitors
-exec xrandr --output DVI-I-1 --right-of VGA-1
+exec xrandr --output HDMI-1 --right-of VGA-1
+
+mouse_warping none

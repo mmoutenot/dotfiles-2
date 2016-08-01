@@ -3686,6 +3686,8 @@ fi
 
 zrclocal
 
+PATH=$PATH:~/.local/bin
+
 ## genrefcard.pl settings
 
 ### doc strings for external functions from files

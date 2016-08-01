@@ -50,11 +50,8 @@ syntax on           " Enable syntax highlighting
 """""""""""""""""""""""""""""
 call pathogen#infect()          " Pathogen takes care of loading the plugins
 
-let g:airline_left_sep = ''     " Use simple separators
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep = '|'
-let g:airline_right_alt_sep = '|'
 let g:airline#extensions#tabline#enabled = 1    " Enable nice tabline
+let g:airline_powerline_fonts = 1
 
 let g:NERDTreeDirArrows = 0   " Disable fancy arrows in NERDTree
 

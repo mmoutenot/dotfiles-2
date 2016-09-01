@@ -70,8 +70,8 @@ bindsym $mod+a focus parent
 # focus a child container
 bindsym $mod+z focus child
 
-workspace 1 output VGA-1
-workspace 2 output HDMI-1
+workspace 1 output VGA1
+workspace 2 output HDMI2
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -155,10 +155,6 @@ bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ && pkill -SIGRTMIN+3 
 bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- && pkill -SIGRTMIN+3 i3blocks
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+3 i3blocks
 
-# Sreen brightness controls (brightness up, brightness down)
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -SIGRTMIN+2 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -SIGRTMIN+2 i3blocks
-
 # Printscreen saves screenshot (with shift only focused window)
 bindsym --release Print exec --no-startup-id scrot
 bindsym --release Shift+Print exec --no-startup-id scrot -u
@@ -188,7 +184,7 @@ bindsym $mod+Shift+y gaps outer current minus 6
 bindsym $mod+Shift+u gaps outer current plus 6
 
 # class                 border  backgr. text    indicator
-client.focused          #676d3d #676d3d #ebdbb2 #676d3d
+client.focused          #c33027 #c33027 #0a0f14 #c33027
 client.unfocused        #323232 #323232 #ebdbb2 #323232
 client.focused_inactive #323232 #333333 #ebdbb2 #323232
 client.urgent           #383a3b #383a3b #ee0000 #383a3b
@@ -201,13 +197,13 @@ bar {
     font pango:Inconsolata, FontAwesome 9
 
     colors {
-         background #282828
-         statusline #ebdbb2
-         separator  #756d59
+         background #0a0f14
+         statusline #98d1ce
+         separator  #98d1ce
 
                             #border backgr. text
-         focused_workspace  #676d3d #676d3d #ebdbb2
-         active_workspace   #323232 #5f676a #ebdbb2
+         focused_workspace  #c33027 #c33027 #98d1ce
+         active_workspace   #323232 #5f676a #98d1ce
          inactive_workspace #323232 #323232 #888888
          urgent_workspace   #333333 #900000 #ffffff
     }
@@ -218,7 +214,7 @@ exec setxkbmap -layout 'us,cz(qwerty)' && setxkbmap -option 'grp:shift_caps_togg
 
 # Applets
 exec --no-startup-id nm-applet # network manager
-#exec --no-startup-id twmnd # notifications
+exec --no-startup-id twmnd # notifications
 #exec --no-startup-id dropbox
 exec --no-startup-id megasync
 exec --no-startup-id redshift-gtk
@@ -232,6 +228,6 @@ exec compton -b --config ~/.compton.conf
 exec feh --bg-tile ~/bg.png
 
 # Multiple monitors
-exec xrandr --output HDMI-1 --right-of VGA-1
+exec xrandr --output HDMI2 --right-of VGA1
 
 mouse_warping none

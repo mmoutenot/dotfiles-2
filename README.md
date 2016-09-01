@@ -38,6 +38,7 @@ which is why my .zshrc is rather short.
 
 * Bad Wolf
 * CodeSchool* ([source](http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/))
+* Gotham
 * Gruvbox
 * Inkpot
 * Jellybeans

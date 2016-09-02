@@ -225,7 +225,7 @@ exec --no-startup-id slack
 exec compton -b --config ~/.compton.conf
 
 # Wallpaper
-exec feh --bg-tile ~/bg.png
+exec feh --bg-fill ~/wallpapers/1472735145983.jpg
 
 # Multiple monitors
 exec xrandr --output HDMI2 --right-of VGA1

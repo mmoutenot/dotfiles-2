@@ -25,6 +25,7 @@ which is why my .zshrc is rather short.
 * MatchTags
 * NERD Tree
 * Tag List
+* Vim-php-cs-fixer
 * YouCompleteMe
 * ctrlp.vim
 * delimitMate

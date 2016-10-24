@@ -61,3 +61,6 @@
 [submodule ".vim/bundle/vim-gotham"]
 	path = .vim/bundle/vim-gotham
 	url = https://github.com/whatyouhide/vim-gotham.git
+[submodule ".vim/bundle/vim-php-cs-fixer"]
+	path = .vim/bundle/vim-php-cs-fixer
+	url = https://github.com/stephpy/vim-php-cs-fixer.git

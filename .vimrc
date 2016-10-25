@@ -45,6 +45,8 @@ set list            " Enable the above settings
 
 syntax on           " Enable syntax highlighting
 
+set tags=/srv/http/cme/php.tags " Tags for autocompletion
+
 """""""""""""""""""""""""""""
 "        Plugins            "
 """""""""""""""""""""""""""""

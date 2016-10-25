@@ -18,6 +18,8 @@ set whichwrap+=<,>,h,l  " Allow cursor to wrap lines
 set hidden          " Allow opening new buffers without saving changes
 set laststatus=2    " Wider status line, needed for powerline
 
+autocmd CompleteDone * pclose " Automaticaly close preview after completion
+
 """""""""""""""""""""""""""""
 "        Formatting         "
 """""""""""""""""""""""""""""

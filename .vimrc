@@ -55,7 +55,8 @@ call pathogen#infect()          " Pathogen takes care of loading the plugins
 let g:airline#extensions#tabline#enabled = 1    " Enable nice tabline
 let g:airline_powerline_fonts = 1
 
-let g:NERDTreeDirArrows = 0   " Disable fancy arrows in NERDTree
+let g:NERDTreeDirArrowExpandable = '+'  " Disable fancy arrows in NERDTree
+let g:NERDTreeDirArrowCollapsible = '-'
 
 let delimitMate_expand_cr = 1
 

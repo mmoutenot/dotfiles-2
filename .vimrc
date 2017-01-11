@@ -50,6 +50,7 @@ syntax on           " Enable syntax highlighting
 """""""""""""""""""""""""""""
 "        Plugins            "
 """""""""""""""""""""""""""""
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()          " Pathogen takes care of loading the plugins
 
 let g:airline#extensions#tabline#enabled = 1    " Enable nice tabline

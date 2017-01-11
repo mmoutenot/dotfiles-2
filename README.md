@@ -30,6 +30,7 @@ which is why my .zshrc is rather short.
 * YouCompleteMe
 * ctrlp.vim
 * delimitMate
+* pathogen.vim
 * surround.vim
 * syntastic
 * vim-airline

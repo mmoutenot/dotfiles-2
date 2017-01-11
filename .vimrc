@@ -61,6 +61,8 @@ let g:NERDTreeDirArrowCollapsible = '-'
 
 let delimitMate_expand_cr = 1
 
+let g:ycm_collect_identifiers_from_tags_files = 1
+
 """""""""""""""""""""""""""""
 "        Key mapping        "
 """""""""""""""""""""""""""""

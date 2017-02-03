@@ -98,10 +98,10 @@ if &term=='xterm'   " xterm supports 256 colours but doesn't set this
 endif
 if &t_Co==256
     set background=dark     " Use dark background
-    colorscheme gotham " Use nicer colourscheme
+    colorscheme solarized " Use nicer colourscheme
 endif
 if has("gui_running")
-    colorscheme gotham  " Gui sometimes doesn't set t_Co
+    colorscheme solarized  " Gui sometimes doesn't set t_Co
 
     set guioptions+=TlrbRLe " Bug workaround
     set guioptions-=TlrbRLe " Hide the toolbar and scrollbars, use text tabs

@@ -18,37 +18,37 @@ which is why my .zshrc is rather short.
 
 ## Vim plugins included
 
-* Colorizer
-* EasyMotion
-* Emmet-vim
-* Fugitive
-* MatchTags
-* NERD Tree
-* Tag List
-* Vim ESearch
-* Vim-php-cs-fixer
-* YouCompleteMe
-* ctrlp.vim
-* delimitMate
-* pathogen.vim
-* phpcomplete.vim
-* surround.vim
-* syntastic
-* vim-airline
-* vim-airline-themes
-* vim-easy-align
-* vim-glsl
+* [Colorizer](https://github.com/chrisbra/Colorizer)
+* [EasyMotion](https://github.com/easymotion/vim-easymotion)
+* [Emmet-vim](https://github.com/mattn/emmet-vim)
+* [Fugitive](https://github.com/tpope/vim-fugitive)
+* [MatchTag](https://github.com/gregsexton/MatchTag)
+* [NERD Tree](https://github.com/scrooloose/nerdtree)
+* [Tag List](https://github.com/vim-scripts/taglist.vim)
+* [Vim ESearch](https://github.com/eugen0329/vim-esearch)
+* [Vim-php-cs-fixer](https://github.com/stephpy/vim-php-cs-fixer)
+* [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+* [ctrlp.vim](https://github.com/kien/ctrlp.vim)
+* [delimitMate](https://github.com/Raimondi/delimitMate)
+* [pathogen.vim](https://github.com/tpope/vim-pathogen)
+* [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim)
+* [surround.vim](https://github.com/tpope/vim-surround)
+* [syntastic](https://github.com/vim-syntastic/syntastic)
+* [vim-airline](https://github.com/vim-airline/vim-airline)
+* [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+* [vim-easy-align](https://github.com/junegunn/vim-easy-align)
+* [vim-glsl](https://github.com/tikhomirov/vim-glsl)
 
 ## Vim colourschemes
 
-* Bad Wolf
+* [Bad Wolf](https://github.com/sjl/badwolf)
 * CodeSchool* ([source](http://astonj.com/tech/vim-for-ruby-rails-and-a-sexy-theme/))
-* Gotham
-* Gruvbox
-* Inkpot
-* Jellybeans
-* Molokai
+* [Gotham](https://github.com/whatyouhide/vim-gotham)
+* [Gruvbox](https://github.com/morhetz/gruvbox)
+* [Inkpot](https://github.com/ciaranm/inkpot)
+* [Jellybeans](https://github.com/nanotech/jellybeans.vim)
+* [Molokai](https://github.com/tomasr/molokai)
 * Mustang* ([source](http://hcalves.deviantart.com/art/Mustang-Vim-Colorscheme-98974484))
-* Solarized
+* [Solarized](https://github.com/altercation/vim-colors-solarized)
 
 _*These don't have an official git repo AFAIK._

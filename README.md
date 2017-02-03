@@ -35,6 +35,7 @@ which is why my .zshrc is rather short.
 * surround.vim
 * syntastic
 * vim-airline
+* vim-airline-themes
 * vim-easy-align
 * vim-glsl
 

@@ -49,5 +49,6 @@ which is why my .zshrc is rather short.
 * Jellybeans
 * Molokai
 * Mustang* ([source](http://hcalves.deviantart.com/art/Mustang-Vim-Colorscheme-98974484))
+* Solarized
 
 _*These don't have an official git repo AFAIK._

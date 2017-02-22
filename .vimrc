@@ -81,7 +81,7 @@ nnoremap tl  :tablast<CR>
 nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnew<CR>
 nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+nnoremap td  :bdelete<CR> " bd instead of tabc so there isn't a hidden buff left
 
 " F2 toggles NERDTree view
 nnoremap <silent> <F2> :NERDTreeToggle<CR>

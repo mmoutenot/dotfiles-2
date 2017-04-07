@@ -58,6 +58,7 @@ let g:airline_powerline_fonts = 1
 
 let g:NERDTreeDirArrowExpandable = '+'  " Disable fancy arrows in NERDTree
 let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeShowHidden = 1    " Show hidden files
 
 let delimitMate_expand_cr = 1
 

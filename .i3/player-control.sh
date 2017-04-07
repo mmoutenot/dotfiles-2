@@ -45,16 +45,7 @@ function previous {
     fi
 }
 
-function previous {
-    if playerctlReady
-    then
-        playerctl previous
-    else
-        mpc prev > /dev/null
-    fi
-}
-
-function previous {
+function next {
     if playerctlReady
     then
         playerctl next

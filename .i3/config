@@ -148,9 +148,9 @@ mode "ignore i3" {
 bindsym $mod+m mode "ignore i3"
 
 # Audio controls (volume up, volume down, toggle mute)
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+    && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-    && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioMute        exec amixer -q set Master toggle && pkill -SIGRTMIN+3 i3blocks
 
 # Sreen brightness controls (brightness up, brightness down)
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -SIGRTMIN+2 i3blocks
@@ -161,10 +161,10 @@ bindsym --release Print exec --no-startup-id scrot
 bindsym --release Shift+Print exec --no-startup-id scrot -u
 
 # Media keys
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioPlay exec ~/.i3/player-control.sh toggle && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioNext exec ~/.i3/player-control.sh next   && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioPrev exec ~/.i3/player-control.sh prev   && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioStop exec ~/.i3/player-control.sh stop   && pkill -SIGRTMIN+3 i3blocks
 
 # Applications
 bindsym $mod+i exec firefox

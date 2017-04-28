@@ -75,6 +75,7 @@ nnoremap k gk
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
 " Nice buffer navigation
+nnoremap tg  :buffer<Space>
 nnoremap th  :bfirst<CR>
 nnoremap tj  :bnext<CR>
 nnoremap tk  :bprev<CR>

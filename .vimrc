@@ -94,6 +94,10 @@ set pastetoggle=<F3>
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
 
+" ctrl-j triggers snipmate
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 """""""""""""""""""""""""""""
 "        Colours and GUI    "
 """""""""""""""""""""""""""""

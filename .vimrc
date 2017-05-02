@@ -63,6 +63,8 @@ let g:NERDTreeShowHidden = 1    " Show hidden files
 let delimitMate_expand_cr = 1
 
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
@@ -93,10 +95,6 @@ set pastetoggle=<F3>
 
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
-
-" ctrl-j triggers snipmate
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
 
 """""""""""""""""""""""""""""
 "        Colours and GUI    "

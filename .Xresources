@@ -3,10 +3,10 @@ URxvt.font: xft:Inconsolata for Powerline:Medium:pixelsize=16
 !URxvt.letterSpace: -1
 
 ! Scrollbar
-URxvt.scrollBar: false
-!URxvt.scrollBar_right: true
-!URxvt.scrollstyle: plain
-!URxvt.scrollColor: #2d2d2d
+URxvt.scrollBar: true
+URxvt.scrollBar_right: true
+URxvt.scrollstyle: plain
+URxvt.scrollColor: #2aa198
 
 ! Transparency
 !URxvt.transparent: true
@@ -45,7 +45,7 @@ URxvt.depth: 24
 #define S_base0         #839496
 #define S_base1         #93a1a1
 #define S_base2         #eee8d5
-#define S_base3 #fdf6e3
+#define S_base3         #fdf6e3
 
 *background:              S_base03
 *foreground:              S_base0

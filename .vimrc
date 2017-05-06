@@ -58,10 +58,13 @@ let g:airline_powerline_fonts = 1
 
 let g:NERDTreeDirArrowExpandable = '+'  " Disable fancy arrows in NERDTree
 let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeShowHidden = 1    " Show hidden files
 
 let delimitMate_expand_cr = 1
 
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
@@ -73,15 +76,16 @@ nnoremap k gk
 " Use space to clear search highlights and any message displayed
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
-" Nice tabs navigation
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnew<CR>
-nnoremap tm  :tabm<Space>
-nnoremap td  :bdelete<CR> " bd instead of tabc so there isn't a hidden buff left
+" Nice buffer navigation
+nnoremap tg  :buffer<Space>
+nnoremap th  :bfirst<CR>
+nnoremap tj  :bnext<CR>
+nnoremap tk  :bprev<CR>
+nnoremap tl  :blast<CR>
+nnoremap tt  :edit<Space>
+nnoremap tn  :enew<CR>
+nnoremap td  :bdelete<CR>
+nnoremap ts  :files<CR>
 
 " F2 toggles NERDTree view
 nnoremap <silent> <F2> :NERDTreeToggle<CR>

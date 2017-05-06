@@ -211,7 +211,7 @@ bar {
 }
 
 # Keyboard layouts, shift+capslock to switch
-exec setxkbmap -layout 'us,cz(qwerty)' && setxkbmap -option 'grp:shift_caps_toggle'
+exec setxkbmap -layout 'us,cz(qwerty)' && setxkbmap -option 'grp:alt_caps_toggle'
 
 # Applets
 exec --no-startup-id nm-applet # network manager

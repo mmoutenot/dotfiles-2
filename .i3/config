@@ -176,7 +176,7 @@ for_window [class="^.*"] border pixel 2
 assign [class="Steam"] 5
 
 # Gaps
-gaps inner 12
+gaps inner 6
 smart_borders no_gaps
 
 bindsym $mod+y       gaps inner current minus 6

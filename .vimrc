@@ -18,6 +18,8 @@ set whichwrap+=<,>,h,l  " Allow cursor to wrap lines
 set hidden          " Allow opening new buffers without saving changes
 set laststatus=2    " Wider status line, needed for powerline
 
+autocmd CompleteDone * pclose " Automaticaly close preview after completion
+
 """""""""""""""""""""""""""""
 "        Formatting         "
 """""""""""""""""""""""""""""
@@ -48,17 +50,21 @@ syntax on           " Enable syntax highlighting
 """""""""""""""""""""""""""""
 "        Plugins            "
 """""""""""""""""""""""""""""
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()          " Pathogen takes care of loading the plugins
 
-let g:airline_left_sep = ''     " Use simple separators
-let g:airline_right_sep = ''
-let g:airline_left_alt_sep = '|'
-let g:airline_right_alt_sep = '|'
 let g:airline#extensions#tabline#enabled = 1    " Enable nice tabline
+let g:airline_powerline_fonts = 1
 
-let g:NERDTreeDirArrows = 0   " Disable fancy arrows in NERDTree
+let g:NERDTreeDirArrowExpandable = '+'  " Disable fancy arrows in NERDTree
+let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeShowHidden = 1    " Show hidden files
 
 let delimitMate_expand_cr = 1
+
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
@@ -70,15 +76,16 @@ nnoremap k gk
 " Use space to clear search highlights and any message displayed
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
-" Nice tabs navigation
-nnoremap th  :tabfirst<CR>
-nnoremap tj  :tabnext<CR>
-nnoremap tk  :tabprev<CR>
-nnoremap tl  :tablast<CR>
-nnoremap tt  :tabedit<Space>
-nnoremap tn  :tabnew<CR>
-nnoremap tm  :tabm<Space>
-nnoremap td  :tabclose<CR>
+" Nice buffer navigation
+nnoremap tg  :buffer<Space>
+nnoremap th  :bfirst<CR>
+nnoremap tj  :bnext<CR>
+nnoremap tk  :bprev<CR>
+nnoremap tl  :blast<CR>
+nnoremap tt  :edit<Space>
+nnoremap tn  :enew<CR>
+nnoremap td  :bdelete<CR>
+nnoremap ts  :files<CR>
 
 " F2 toggles NERDTree view
 nnoremap <silent> <F2> :NERDTreeToggle<CR>
@@ -86,18 +93,22 @@ nnoremap <silent> <F2> :NERDTreeToggle<CR>
 " F3 toggles paste mode
 set pastetoggle=<F3>
 
+" leader r to save as root
+nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
+
 """""""""""""""""""""""""""""
 "        Colours and GUI    "
 """""""""""""""""""""""""""""
+colorscheme jellybeans
 if &term=='xterm'   " xterm supports 256 colours but doesn't set this
     set t_Co=256
 endif
 if &t_Co==256
     set background=dark     " Use dark background
-    colorscheme gruvbox  " Use nicer colourscheme
+    colorscheme solarized " Use nicer colourscheme
 endif
 if has("gui_running")
-    colorscheme gruvbox  " Gui sometimes doesn't set t_Co
+    colorscheme solarized  " Gui sometimes doesn't set t_Co
 
     set guioptions+=TlrbRLe " Bug workaround
     set guioptions-=TlrbRLe " Hide the toolbar and scrollbars, use text tabs

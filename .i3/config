@@ -27,9 +27,9 @@ bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # move focused window
@@ -39,9 +39,9 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
@@ -69,6 +69,9 @@ bindsym $mod+a focus parent
 
 # focus a child container
 bindsym $mod+z focus child
+
+workspace 1 output HDMI1
+workspace 2 output VGA1
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -109,16 +112,16 @@ mode "resize" {
     # Pressing right will grow the window’s width.
     # Pressing up will shrink the window’s height.
     # Pressing down will grow the window’s height.
-    bindsym h resize shrink width 10 px or 10 ppt
-    bindsym j resize grow height 10 px or 10 ppt
+    bindsym h resize shrink width  10 px or 10 ppt
+    bindsym j resize grow   height 10 px or 10 ppt
     bindsym k resize shrink height 10 px or 10 ppt
-    bindsym l resize grow width 10 px or 10 ppt
+    bindsym l resize grow   width  10 px or 10 ppt
 
     # same bindings, but for the arrow keys
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left  resize shrink width  10 px or 10 ppt
+    bindsym Down  resize grow   height 10 px or 10 ppt
+    bindsym Up    resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow   width  10 px or 10 ppt
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -148,23 +151,19 @@ mode "ignore i3" {
 bindsym $mod+m mode "ignore i3"
 
 # Audio controls (volume up, volume down, toggle mute)
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle && pkill -SIGRTMIN+3 i3blocks
-
-# Sreen brightness controls (brightness up, brightness down)
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -SIGRTMIN+2 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -SIGRTMIN+2 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+    && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-    && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioMute        exec amixer -q set Master toggle && pkill -SIGRTMIN+3 i3blocks
 
 # Printscreen saves screenshot (with shift only focused window)
-bindsym --release Print exec --no-startup-id scrot
+bindsym --release Print       exec --no-startup-id scrot
 bindsym --release Shift+Print exec --no-startup-id scrot -u
 
 # Media keys
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioPlay exec ~/.i3/player-control.sh toggle && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioNext exec ~/.i3/player-control.sh next   && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioPrev exec ~/.i3/player-control.sh prev   && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioStop exec ~/.i3/player-control.sh stop   && pkill -SIGRTMIN+3 i3blocks
 
 # Applications
 bindsym $mod+i exec firefox
@@ -179,54 +178,59 @@ assign [class="Steam"] 5
 gaps inner 12
 smart_borders no_gaps
 
-bindsym $mod+y gaps inner current minus 6
-bindsym $mod+u gaps inner current plus 6
+bindsym $mod+y       gaps inner current minus 6
+bindsym $mod+u       gaps inner current plus 6
 bindsym $mod+Shift+y gaps outer current minus 6
 bindsym $mod+Shift+u gaps outer current plus 6
 
 # class                 border  backgr. text    indicator
-client.focused          #676d3d #676d3d #ebdbb2 #676d3d
-client.unfocused        #323232 #323232 #ebdbb2 #323232
-client.focused_inactive #323232 #333333 #ebdbb2 #323232
-client.urgent           #383a3b #383a3b #ee0000 #383a3b
+client.focused          #002b36 #586e75 #fdf6e3 #268bd2
+client.focused_inactive #002b36 #073642 #839496 #073642
+client.unfocused        #002b36 #073642 #839496 #073642
+client.urgent           #002b36 #dc322f #fdf6e3 #002b36
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
     position top
+    tray_output primary
     font pango:Inconsolata, FontAwesome 9
 
     colors {
-         background #282828
-         statusline #ebdbb2
-         separator  #756d59
-
+        background #002b36
+        statusline #839496
+        separator  #586e75
                             #border backgr. text
-         focused_workspace  #676d3d #676d3d #ebdbb2
-         active_workspace   #323232 #5f676a #ebdbb2
-         inactive_workspace #323232 #323232 #888888
-         urgent_workspace   #333333 #900000 #ffffff
+        focused_workspace   #b58900 #b58900 #002b36
+        active_workspace    #586e75 #586e75 #002b36
+        inactive_workspace  #073642 #002b36 #839496
+        urgent_workspace    #dc322f #dc322f #fdf6e3
     }
 }
 
 # Keyboard layouts, shift+capslock to switch
-exec setxkbmap -layout 'us,cz(qwerty)' && setxkbmap -option 'grp:shift_caps_toggle'
+exec setxkbmap -layout 'us,cz(qwerty)' && setxkbmap -option 'grp:alt_caps_toggle'
 
 # Applets
 exec --no-startup-id nm-applet # network manager
 exec --no-startup-id twmnd # notifications
-exec --no-startup-id dropbox
+#exec --no-startup-id dropbox
 exec --no-startup-id megasync
 exec --no-startup-id redshift-gtk
 exec --no-startup-id udiskie --smart-tray # usb storage automounter
+exec --no-startup-id slack
+exec --no-startup-id pasystray
 exec --no-startup-id uim-toolbar-gtk3-systray
-
-# Musid daemon
-exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 
 # Compositor
 exec compton -b --config ~/.compton.conf
 
 # Wallpaper
-exec feh --bg-fill /media/data2/Dokumenty/Tapety/1425731791163.jpg
+#exec feh --bg-fill wallpapers/road2.jpg --bg-fill wallpapers/road1.jpg
+exec nitrogen --restore
+
+# Multiple monitors
+exec xrandr --output HDMI1 --primary --left-of VGA1
+
+mouse_warping none

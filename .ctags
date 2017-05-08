@@ -1,0 +1,4 @@
+--fields=+l
+
+--exclude=*.min.*
+--exclude=*.swp

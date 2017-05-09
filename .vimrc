@@ -50,19 +50,26 @@ syntax on           " Enable syntax highlighting
 """""""""""""""""""""""""""""
 "        Plugins            "
 """""""""""""""""""""""""""""
+" Pathogen takes care of loading the plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()          " Pathogen takes care of loading the plugins
+call pathogen#infect()
 
-let g:airline#extensions#tabline#enabled = 1    " Enable nice tabline
+" Enable nice tabline and font
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-let g:NERDTreeDirArrowExpandable = '+'  " Disable fancy arrows in NERDTree
+" Disable fancy arrows in NERDTree
+let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-let g:NERDTreeShowHidden = 1    " Show hidden files
+" Show hidden files
+let g:NERDTreeShowHidden = 1
 
+" Nice enter inside parentheses
 let delimitMate_expand_cr = 1
 
+" Use tags files for completion
 let g:ycm_collect_identifiers_from_tags_files = 1
+" Compatibility with SnipMate
 let g:ycm_key_list_select_completion   = ['<C-j>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 

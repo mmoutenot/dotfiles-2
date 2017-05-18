@@ -16,9 +16,9 @@ set display+=lastline   " Always display the last line of the screen
 set encoding=utf8   " Use utf8 as internal encoding
 set whichwrap+=<,>,h,l  " Allow cursor to wrap lines
 set hidden          " Allow opening new buffers without saving changes
-set laststatus=2    " Wider status line, needed for powerline
+set mouse=a         " Allow mouse control in all modes
 
-autocmd CompleteDone * pclose " Automaticaly close preview after completion
+autocmd CompleteDone * pclose " Automatically close preview after completion
 
 """""""""""""""""""""""""""""
 "        Formatting         "
@@ -44,6 +44,7 @@ set ruler           " Show line and cursor position
 set colorcolumn=80  " Highlight the 80th column
 set listchars=tab:>-,trail:· " Show tabs and trailing space
 set list            " Enable the above settings
+set laststatus=2    " Wider status line, needed for powerline
 
 syntax on           " Enable syntax highlighting
 

@@ -5,3 +5,5 @@
 	default = simple
 [credential]
 	helper = cache
+[diff]
+	tool = vimdiff

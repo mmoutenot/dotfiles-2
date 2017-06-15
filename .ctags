@@ -1,4 +1,4 @@
---fields=+l
+--fields=+aimlS
 
 --exclude=*.min.*
 --exclude=*.swp

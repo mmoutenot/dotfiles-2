@@ -115,6 +115,9 @@ nnoremap <silent> <F2> :NERDTreeToggle<CR>
 " F3 toggles paste mode
 set pastetoggle=<F3>
 
+" F4 toggles undo tree
+nnoremap <F4> :UndotreeToggle<CR>
+
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
 

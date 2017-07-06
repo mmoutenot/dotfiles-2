@@ -17,6 +17,10 @@ set encoding=utf8   " Use utf8 as internal encoding
 set whichwrap+=<,>,h,l  " Allow cursor to wrap lines
 set hidden          " Allow opening new buffers without saving changes
 set mouse=a         " Allow mouse control in all modes
+set undofile        " Persistent undo history
+set undodir=~/.vim/undo " Undo data location
+set directory=~/.vim/swap " Swap file location
+set backupdir=~/.vim/backup " Backup file location
 
 autocmd CompleteDone * pclose " Automatically close preview after completion
 

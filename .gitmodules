@@ -88,3 +88,6 @@
 [submodule ".vim/bundle/vim-addon-mw-utils"]
 	path = .vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
+[submodule ".vim/bundle/undotree"]
+	path = .vim/bundle/undotree
+	url = https://github.com/mbbill/undotree.git

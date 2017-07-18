@@ -109,14 +109,17 @@ nnoremap tn  :enew<CR>
 nnoremap td  :bdelete<CR>
 nnoremap ts  :files<CR>
 
-" F2 toggles NERDTree view
-nnoremap <silent> <F2> :NERDTreeToggle<CR>
+" F2 toggles paste mode
+set pastetoggle=<F2>
 
-" F3 toggles paste mode
-set pastetoggle=<F3>
+" F3 toggles NERDTree view
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 " F4 toggles undo tree
-nnoremap <F4> :UndotreeToggle<CR>
+nnoremap <silent> <F4> :UndotreeToggle<CR>
+
+" F5 toggles tag list
+nnoremap <silent> <F5> :TlistToggle<CR>
 
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>

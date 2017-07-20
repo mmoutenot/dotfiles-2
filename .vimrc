@@ -59,9 +59,13 @@ syntax on           " Enable syntax highlighting
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" Enable nice tabline and font
+" Enable nice tabline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" Enable nice font only on my machines
+let nice_powerline = index(['helios', 'hermes', 'hedgehog'], hostname()) >= 0
+if nice_powerline
+    let g:airline_powerline_fonts = 1
+endif
 
 " Disable fancy arrows in NERDTree
 let g:NERDTreeDirArrowExpandable = '+'
@@ -127,26 +131,22 @@ nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
 """""""""""""""""""""""""""""
 "        Colours and GUI    "
 """""""""""""""""""""""""""""
-if &term=='xterm'   " xterm supports 256 colours but doesn't set this
-    set t_Co=256
-endif
-if &t_Co==256
-    set background=dark     " Use dark background
-    colorscheme gruvbox  " Use nicer colourscheme
-endif
-if has("gui_running")
-    colorscheme gruvbox  " Gui sometimes doesn't set t_Co
+set background=dark     " Use dark background
+colorscheme gruvbox " Use nicer colourscheme
 
+if has("gui_running")
     set guioptions+=TlrbRLe " Bug workaround
     set guioptions-=TlrbRLe " Hide the toolbar and scrollbars, use text tabs
 
     set guioptions+=c       " Don't open dialogue windows
 
-    set background=dark     " Use dark background
-
-    if has("linux")
-        set guifont=Monospace\ 10   " Use different font
-    elseif has("Win32")
+    if has("unix")
+        if nice_powerline
+            set guifont=Inconsolata\ for\ Powerline\ Medium\ 12
+        else
+            set guifont=Inconsolata\ Medium\ 12
+        endif
+    else
         set guifont=Consolas:h10
     endif
 endif

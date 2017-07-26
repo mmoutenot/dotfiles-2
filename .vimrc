@@ -98,6 +98,8 @@ let g:syntastic_check_on_wq = 0
 " j and k go up/down a row in wrapped lines
 nnoremap j gj
 nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " Use space to clear search highlights and any message displayed
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>

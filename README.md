@@ -25,6 +25,7 @@ which is why my .zshrc is rather short.
 * [Emmet-vim](https://github.com/mattn/emmet-vim)
 * [Fugitive](https://github.com/tpope/vim-fugitive)
 * [MatchTag](https://github.com/gregsexton/MatchTag)
+* [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 * [NERD Tree](https://github.com/scrooloose/nerdtree)
 * [pathogen.vim](https://github.com/tpope/vim-pathogen)
 * [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim)

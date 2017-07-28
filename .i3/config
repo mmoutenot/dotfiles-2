@@ -2,7 +2,7 @@
 #
 # User guide: http://i3wm.org/docs/userguide.html
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -81,6 +81,9 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+
+bindsym $mod+comma workspace prev
+bindsym $mod+period workspace next
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1

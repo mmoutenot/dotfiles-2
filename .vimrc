@@ -45,7 +45,7 @@ set hlsearch        " Highlight search results
 set incsearch       " Highlight search results as the search is typed
 set showcmd         " Show command on the bottom
 set ruler           " Show line and cursor position
-set colorcolumn=80  " Highlight the 80th column
+set colorcolumn=80,120  " Highlight the 80th column
 set listchars=tab:>-,trail:· " Show tabs and trailing space
 set list            " Enable the above settings
 set laststatus=2    " Wider status line, needed for powerline
@@ -86,7 +86,6 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -115,6 +114,18 @@ nnoremap tn  :enew<CR>
 nnoremap td  :bdelete<CR>
 nnoremap ts  :files<CR>
 
+" Alt+j/k moves lines down/up
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
+
+" Alt+h/l decreases/increases indentation level
+nnoremap <A-h> <<
+nnoremap <A-l> >>
+vnoremap <A-h> <gv
+vnoremap <A-l> >gv
+
 " F2 toggles paste mode
 set pastetoggle=<F2>
 
@@ -134,7 +145,7 @@ nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
 "        Colours and GUI    "
 """""""""""""""""""""""""""""
 set background=dark     " Use dark background
-colorscheme solarized " Use nicer colourscheme
+colorscheme solarized   " Use nicer colourscheme
 
 if has("gui_running")
     set guioptions+=TlrbRLe " Bug workaround

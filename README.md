@@ -1,10 +1,22 @@
-# My dotfiles
+# My Dotfiles
 
-Can be installed via the `install.sh` script. The script will back up the old dotfiles. Use at your own risk.
+Can be installed via the `install.sh` script. The script will back up the old dotfiles. _Use at your own risk._
 
 ## Screenshot
 
 ![screenshot](https://raw.githubusercontent.com/Remedan/dotfiles/master/screenshot.png)
+
+## Key Components and Software
+
+* [i3-gaps](https://github.com/Airblader/i3) + i3blocks + Compton
+* rxvt + Z shell
+* Neovim
+* Ranger
+* Rofi
+* twmn
+* mpd + ncmpcpp
+* sxiv, zathura
+* redshift
 
 ## Acknowledgements
 

@@ -15,7 +15,7 @@ Can be installed via the `install.sh` script. The script will back up the old do
 * Rofi
 * twmn
 * mpd + ncmpcpp
-* sxiv, zathura
+* sxiv, mpv, zathura
 * redshift
 
 ## Acknowledgements

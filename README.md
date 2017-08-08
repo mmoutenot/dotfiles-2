@@ -1,6 +1,6 @@
 # ~/dotfiles
 
-Can be installed via the `install.sh` script. The script will back up the old dotfiles. Use at your own risk.
+Can be installed by cloning this repo into your home and running the `install.sh` script. The script will back up your old dotfiles. Use at your own risk.
 
 ## Screenshot
 
@@ -9,7 +9,8 @@ Can be installed via the `install.sh` script. The script will back up the old do
 ## Acknowledgements
 
 * Colours are from the [gruvbox theme](https://github.com/morhetz/gruvbox)
-* `.compton.conf` stolen from [twily.info](http://twily.info/)
+* `.compton.conf` and `.vimperator/colors` stolen from [twily.info](http://twily.info/)
+* Lots of snippets copied or adapted from all kinds of sources. Too many to keep track of all of them.
 
 ## Zsh config
 

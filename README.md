@@ -1,4 +1,4 @@
-# My Dotfiles
+# ~/dotfiles
 
 Can be installed via the `install.sh` script. The script will back up the old dotfiles. _Use at your own risk._
 

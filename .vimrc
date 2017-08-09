@@ -102,6 +102,11 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+" Use The Silver Searcher when available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
 """""""""""""""""""""""""""""
 "        Key mapping        "
 """""""""""""""""""""""""""""

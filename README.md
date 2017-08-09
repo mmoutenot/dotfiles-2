@@ -31,6 +31,7 @@ which is why my .zshrc is rather short.
 
 ## Vim plugins included
 
+* [ack.vim](https://github.com/mileszs/ack.vim)
 * [Colorizer](https://github.com/chrisbra/Colorizer)
 * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 * [delimitMate](https://github.com/Raimondi/delimitMate)

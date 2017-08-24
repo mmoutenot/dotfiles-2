@@ -17,6 +17,7 @@ Can be installed by cloning this repo into your home and running the `install.sh
 * mpd + ncmpcpp
 * sxiv, mpv, zathura
 * redshift
+* WeeChat
 
 ## Acknowledgements
 

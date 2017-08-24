@@ -6,6 +6,19 @@ Can be installed by cloning this repo into your home and running the `install.sh
 
 ![screenshot](https://raw.githubusercontent.com/Remedan/dotfiles/master/screenshot.png)
 
+## Key Components and Software
+
+* [i3-gaps](https://github.com/Airblader/i3) + i3blocks + Compton
+* rxvt + Z shell
+* Neovim
+* Ranger
+* Rofi
+* twmn
+* mpd + ncmpcpp
+* sxiv, mpv, zathura
+* redshift
+* WeeChat
+
 ## Acknowledgements
 
 * Colours are from the [gruvbox theme](https://github.com/morhetz/gruvbox)

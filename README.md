@@ -1,15 +1,29 @@
-# My dotfiles
+# ~/dotfiles
 
-Can be installed via the `install.sh` script. The script will back up the old dotfiles. Use at your own risk.
+Can be installed by cloning this repo into your home and running the `install.sh` script. The script will back up your old dotfiles. Use at your own risk.
 
 ## Screenshot
 
 ![screenshot](https://raw.githubusercontent.com/Remedan/dotfiles/master/screenshot.png)
 
+## Key Components and Software
+
+* [i3-gaps](https://github.com/Airblader/i3) + i3blocks + Compton
+* rxvt + Z shell
+* Neovim
+* Ranger
+* Rofi
+* twmn
+* mpd + ncmpcpp
+* sxiv, mpv, zathura
+* redshift
+* WeeChat
+
 ## Acknowledgements
 
 * Colours are from the [gruvbox theme](https://github.com/morhetz/gruvbox)
-* `.compton.conf` stolen from [twily.info](http://twily.info/)
+* `.compton.conf` and `.vimperator/colors` stolen from [twily.info](http://twily.info/)
+* Lots of snippets copied or adapted from all kinds of sources. Too many to keep track of all of them.
 
 ## Zsh config
 
@@ -18,6 +32,7 @@ which is why my .zshrc is rather short.
 
 ## Vim plugins included
 
+* [ack.vim](https://github.com/mileszs/ack.vim)
 * [Colorizer](https://github.com/chrisbra/Colorizer)
 * [ctrlp.vim](https://github.com/kien/ctrlp.vim)
 * [delimitMate](https://github.com/Raimondi/delimitMate)
@@ -25,6 +40,7 @@ which is why my .zshrc is rather short.
 * [Emmet-vim](https://github.com/mattn/emmet-vim)
 * [Fugitive](https://github.com/tpope/vim-fugitive)
 * [MatchTag](https://github.com/gregsexton/MatchTag)
+* [NERD Commenter](https://github.com/scrooloose/nerdcommenter)
 * [NERD Tree](https://github.com/scrooloose/nerdtree)
 * [pathogen.vim](https://github.com/tpope/vim-pathogen)
 * [phpcomplete.vim](https://github.com/shawncplus/phpcomplete.vim)
@@ -33,6 +49,7 @@ which is why my .zshrc is rather short.
 * [syntastic](https://github.com/vim-syntastic/syntastic)
 * [Tag List](https://github.com/vim-scripts/taglist.vim)
 * [tlib](https://github.com/tomtom/tlib_vim) (dependency for SnipMate)
+* [undotree.vim](https://github.com/mbbill/undotree)
 * [Vim ESearch](https://github.com/eugen0329/vim-esearch)
 * [vim-addon-mw-utils](https://github.com/MarcWeber/vim-addon-mw-utils) (dependency for SnipMate)
 * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)

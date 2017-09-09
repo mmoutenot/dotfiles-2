@@ -16,9 +16,13 @@ set display+=lastline   " Always display the last line of the screen
 set encoding=utf8   " Use utf8 as internal encoding
 set whichwrap+=<,>,h,l  " Allow cursor to wrap lines
 set hidden          " Allow opening new buffers without saving changes
-set laststatus=2    " Wider status line, needed for powerline
+set mouse=a         " Allow mouse control in all modes
+set undofile        " Persistent undo history
+set undodir=~/.vim/undo " Undo data location
+set directory=~/.vim/swap " Swap file location
+set backupdir=~/.vim/backup " Backup file location
 
-autocmd CompleteDone * pclose " Automaticaly close preview after completion
+autocmd CompleteDone * pclose " Automatically close preview after completion
 
 """""""""""""""""""""""""""""
 "        Formatting         "
@@ -41,9 +45,10 @@ set hlsearch        " Highlight search results
 set incsearch       " Highlight search results as the search is typed
 set showcmd         " Show command on the bottom
 set ruler           " Show line and cursor position
-set colorcolumn=80  " Highlight the 80th column
+set colorcolumn=80,120  " Highlight the 80th column
 set listchars=tab:>-,trail:· " Show tabs and trailing space
 set list            " Enable the above settings
+set laststatus=2    " Wider status line, needed for powerline
 
 syntax on           " Enable syntax highlighting
 
@@ -54,9 +59,13 @@ syntax on           " Enable syntax highlighting
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" Enable nice tabline and font
+" Enable nice tabline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" Enable nice font only on my machines
+let nice_powerline = index(['helios', 'hermes', 'hedgehog'], hostname()) >= 0
+if nice_powerline
+    let g:airline_powerline_fonts = 1
+endif
 
 " Disable fancy arrows in NERDTree
 let g:NERDTreeDirArrowExpandable = '+'
@@ -77,11 +86,26 @@ let g:ycm_key_list_previous_completion = ['<C-k>', '<Up>']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Use The Silver Searcher when available
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 """""""""""""""""""""""""""""
 "        Key mapping        "
@@ -89,6 +113,8 @@ let g:syntastic_check_on_wq = 0
 " j and k go up/down a row in wrapped lines
 nnoremap j gj
 nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 
 " Use space to clear search highlights and any message displayed
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
@@ -104,11 +130,29 @@ nnoremap tn  :enew<CR>
 nnoremap td  :bdelete<CR>
 nnoremap ts  :files<CR>
 
-" F2 toggles NERDTree view
-nnoremap <silent> <F2> :NERDTreeToggle<CR>
+" Alt+j/k moves lines down/up
+nnoremap <A-j> :m+<CR>==
+nnoremap <A-k> :m-2<CR>==
+vnoremap <A-j> :m'>+<CR>gv=gv
+vnoremap <A-k> :m-2<CR>gv=gv
 
-" F3 toggles paste mode
-set pastetoggle=<F3>
+" Alt+h/l decreases/increases indentation level
+nnoremap <A-h> <<
+nnoremap <A-l> >>
+vnoremap <A-h> <gv
+vnoremap <A-l> >gv
+
+" F2 toggles paste mode
+set pastetoggle=<F2>
+
+" F3 toggles NERDTree view
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
+
+" F4 toggles undo tree
+nnoremap <silent> <F4> :UndotreeToggle<CR>
+
+" F5 toggles tag list
+nnoremap <silent> <F5> :TlistToggle<CR>
 
 " leader r to save as root
 nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
@@ -116,27 +160,22 @@ nnoremap <leader>r :w !sudo tee % > /dev/null<CR>
 """""""""""""""""""""""""""""
 "        Colours and GUI    "
 """""""""""""""""""""""""""""
-colorscheme jellybeans
-if &term=='xterm'   " xterm supports 256 colours but doesn't set this
-    set t_Co=256
-endif
-if &t_Co==256
-    set background=dark     " Use dark background
-    colorscheme solarized " Use nicer colourscheme
-endif
-if has("gui_running")
-    colorscheme solarized  " Gui sometimes doesn't set t_Co
+set background=dark     " Use dark background
+colorscheme solarized   " Use nicer colourscheme
 
+if has("gui_running")
     set guioptions+=TlrbRLe " Bug workaround
     set guioptions-=TlrbRLe " Hide the toolbar and scrollbars, use text tabs
 
     set guioptions+=c       " Don't open dialogue windows
 
-    set background=dark     " Use dark background
-
-    if has("linux")
-        set guifont=Monospace\ 10   " Use different font
-    elseif has("Win32")
+    if has("unix")
+        if nice_powerline
+            set guifont=Inconsolata\ for\ Powerline\ Medium\ 12
+        else
+            set guifont=Inconsolata\ Medium\ 12
+        endif
+    else
         set guifont=Consolas:h10
     endif
 endif

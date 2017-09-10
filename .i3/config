@@ -232,4 +232,6 @@ exec --no-startup-id mpd ~/.config/mpd/mpd.conf
 exec compton -b --config ~/.compton.conf
 
 # Wallpaper
-exec feh --bg-fill ~/wall.png
+exec feh --bg-fill ~/wall.png || feh --bg-fill ~/wall.jpg
+
+mouse_warping none

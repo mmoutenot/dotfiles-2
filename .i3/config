@@ -226,6 +226,6 @@ exec --no-startup-id uim-toolbar-gtk3-systray
 exec compton -b --config ~/.compton.conf
 
 # Wallpaper
-exec feh --bg-fill wall.jpg
+exec feh --bg-fill ~/wall.png || feh --bg-fill ~/wall.jpg
 
 mouse_warping none

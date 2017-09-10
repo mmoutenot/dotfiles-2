@@ -244,7 +244,7 @@ exec --no-startup-id system-config-printer-applet
 exec compton -b --config ~/.compton.conf
 
 # Wallpaper
-exec feh --bg-fill --no-xinerama ~/wall.jpg
+exec feh --bg-fill --no-xinerama ~/wall.png || feh --bg-fill --no-xinerama ~/wall.jpg
 
 # Multiple monitors
 exec xrandr --output HDMI1 --primary --left-of VGA1

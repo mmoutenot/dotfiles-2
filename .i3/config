@@ -185,7 +185,7 @@ bindsym XF86AudioPrev exec ~/.i3/player-control.sh prev   && pkill -SIGRTMIN+3 i
 bindsym XF86AudioStop exec ~/.i3/player-control.sh stop   && pkill -SIGRTMIN+3 i3blocks
 
 # Applications
-bindsym $mod+i exec firefox
+bindsym $mod+i exec firefox-beta
 
 # Borders
 for_window [class="^.*"] border pixel 2
@@ -258,7 +258,7 @@ for_window [class="Slack"] move to workspace $w4
 #exec ~/.i3/restore-layout.sh
 
 exec --no-startup-id spotify
-exec --no-startup-id firefox
+exec --no-startup-id firefox-beta
 exec --no-startup-id slack
 
 exec --no-startup-id i3-msg 'workspace number $w4; append_layout ~/.i3/layout/w4.json; exec urxvt -name update; workspace $w5; append_layout ~/.i3/layout/w5.json; exec urxvt -name weechat -e weechat; exec urxvt -name rtv -e rtv; workspace $w3; append_layout ~/.i3/layout/w3.json; exec urxvt -name vim; exec urxvt -name git; workspace $w1; gaps inner current set 0'
